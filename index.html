@@ -38,7 +38,7 @@
       <div>
         <span class="eyebrow">68000 / 68020 / 68030 / 68040</span>
         <h1>The classic Mac, <em>back on your desk.</em></h1>
-        <p class="lede">Chime68 is a Macintosh emulator written in Rust. It runs 49 of the 68k Macs, from the 128K to the Quadra 840AV and the PowerBook Duo 280c, and boots everything from System 1.0 to Mac OS 8.1, with colour, sound, CDs and the Internet.</p>
+        <p class="lede">Chime68 is a Macintosh emulator written in Rust. It runs 51 of the 68k Macs, from the 128K to the Quadra 840AV and the PowerBook 540c, and boots everything from System 1.0 to Mac OS 8.1, with colour, sound, CDs and the Internet.</p>
         <div class="buttons">
           <a class="button primary" href="#get">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
@@ -57,7 +57,7 @@
     </div>
     <div class="wrap">
       <ul class="stats">
-        <li><strong>49 Macs</strong><span>Compact, Mac II, LC, Quadra and PowerBook</span></li>
+        <li><strong>51 Macs</strong><span>Compact, Mac II, LC, Quadra and PowerBook</span></li>
         <li><strong>System 1.0 to 8.1</strong><span>Booted to the Finder and installed from CD</span></li>
         <li><strong>99.6%</strong><span>of the 68000 SingleStepTests, cycle counts included</span></li>
         <li><strong>Native and web</strong><span>macOS, Linux and Windows, and WebAssembly in a browser</span></li>
@@ -91,7 +91,7 @@
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h13l3 3v13H4Z"/><path d="M8 4v5h7V4M8 20v-6h8v6"/></svg></div>
           <h3>Floppies and hard disks</h3>
-          <p>400K and 800K floppy images, raw or DiskCopy 4.2, 1.44 MB floppies on SuperDrive Macs, SCSI hard disks, partitioned or bare HFS as Mini vMac uses, and the Quadra 630's IDE disk. Writes are saved back to the image.</p>
+          <p>400K and 800K floppy images, raw or DiskCopy 4.2, 1.44 MB floppies on SuperDrive Macs, SCSI hard disks, partitioned or bare HFS as Mini vMac uses, and the IDE disks of the Quadra 630 and PowerBook 150. Writes are saved back to the image.</p>
         </div>
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/></svg></div>
@@ -197,6 +197,8 @@
             <li><strong>PowerBook 140, 170, 160 and 180</strong><span>640 &times; 400, in 16 grays on the 160 and 180</span></li>
             <li><strong>PowerBook Duo 210, 230, 250 and 270c</strong><span>The Duos, the 270c in colour</span></li>
             <li><strong>PowerBook Duo 280 and 280c</strong><span>68040 at 33 MHz</span></li>
+            <li><strong>PowerBook 150</strong><span>A Duo inside, with a 640 &times; 480 LCD and an IDE disk</span></li>
+            <li><strong>PowerBook 540c</strong><span>68LC040 at 33 MHz, a 640 &times; 480 colour LCD, Ethernet and smart batteries</span></li>
           </ul>
         </div>
       </div>
@@ -258,6 +260,10 @@
           <div class="shot"><img src="img/duo270c.png" alt="A PowerBook Duo 270c at the System 7.5.3 Finder on its colour screen, with About This Macintosh." width="640" height="480" loading="lazy"></div>
           <figcaption>PowerBook Duo 270c, System 7.5.3</figcaption>
         </figure>
+        <figure>
+          <div class="shot"><img src="img/pb540c.png" alt="A PowerBook 540c at the System 7.5.3 Finder, with About This Macintosh showing 8 MB and the battery in the menu bar." width="640" height="480" loading="lazy"></div>
+          <figcaption>PowerBook 540c, System 7.5.3</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -271,16 +277,16 @@
       <div class="split">
         <div class="card">
           <h3>Download</h3>
-          <p>Version 0.53.0, ready-made for macOS, Linux and Windows. On a Mac, Chime68.app runs on Apple silicon and Intel: unzip it, put it in Applications and double-click it.</p>
+          <p>Version 0.55.0, ready-made for macOS, Linux and Windows. On a Mac, Chime68.app runs on Apple silicon and Intel: unzip it, put it in Applications and double-click it.</p>
           <p>The app isn't notarized, so the first time, Control-click it and choose Open.</p>
           <ul class="downloads">
-            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.53.0/Chime68-v0.53.0-macos.zip">Chime68.app</a><span>macOS, Apple silicon and Intel</span></li>
-            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.53.0/chime68-v0.53.0-macos-arm64.tar.gz">chime68</a><span>macOS command line, Apple silicon</span></li>
-            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.53.0/chime68-v0.53.0-macos-x86_64.tar.gz">chime68</a><span>macOS command line, Intel</span></li>
-            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.53.0/chime68-v0.53.0-linux-x86_64.tar.gz">chime68</a><span>Linux, x86-64</span></li>
-            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.53.0/chime68-v0.53.0-windows-x86_64.zip">chime68.exe</a><span>Windows, x86-64</span></li>
+            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.55.0/Chime68-v0.55.0-macos.zip">Chime68.app</a><span>macOS, Apple silicon and Intel</span></li>
+            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.55.0/chime68-v0.55.0-macos-arm64.tar.gz">chime68</a><span>macOS command line, Apple silicon</span></li>
+            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.55.0/chime68-v0.55.0-macos-x86_64.tar.gz">chime68</a><span>macOS command line, Intel</span></li>
+            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.55.0/chime68-v0.55.0-linux-x86_64.tar.gz">chime68</a><span>Linux, x86-64</span></li>
+            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.55.0/chime68-v0.55.0-windows-x86_64.zip">chime68.exe</a><span>Windows, x86-64</span></li>
           </ul>
-          <div class="buttons"><a class="button" href="https://github.com/pepito2k/chime68/releases/tag/v0.53.0">Release notes</a></div>
+          <div class="buttons"><a class="button" href="https://github.com/pepito2k/chime68/releases/tag/v0.55.0">Release notes</a></div>
         </div>
         <div class="card">
           <h3>Build from source</h3>
@@ -369,6 +375,8 @@ cargo build --release</code></pre>
             <tr><td>Macintosh Portable, <code>96CA3846</code>; PowerBook 100, <code>96645F9C</code></td><td>Portable, PowerBook 100</td></tr>
             <tr><td>PowerBook 160 and 180, <code>E33B2724</code></td><td>PowerBook 160 or 180</td></tr>
             <tr><td>PowerBook Duo 210, 230 and 250, <code>ECFA989B</code>; 270c, <code>0024D346</code>; 280 and 280c, <code>015621D7</code></td><td>The Duos</td></tr>
+            <tr><td>PowerBook 150, <code>FDA22562</code></td><td>PowerBook 150</td></tr>
+            <tr><td>PowerBook 520, 520c, 540 and 540c, <code>B6909089</code> (2 MB)</td><td>PowerBook 540c</td></tr>
           </tbody>
         </table>
       </div>
