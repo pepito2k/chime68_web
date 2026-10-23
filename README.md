@@ -16,8 +16,8 @@ and open http://localhost:8000.
 
 | Path | What it is |
 |---|---|
-| `index.html`, `style.css` | The page |
-| `fonts/chime68.ttf` | Chime68's own system font, as a TrueType font |
+| `index.html`, `style.css`, `script.js` | The page, and its scroll reveals |
+| `fonts/chime68.ttf` | Chime68's own system font, used for small labels |
 | `img/` | Screenshots from the emulator, and its icon |
 | `tools/make-font.py` | Makes the font from Chime68's bitmap glyphs |
 

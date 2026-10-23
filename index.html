@@ -7,343 +7,287 @@
   <meta name="description" content="Chime68 is a classic Macintosh emulator written in Rust. It runs the 68k Macs from the Plus to the Quadra 950 and the PowerBook 170, and System 6 through Mac OS 8.1.">
   <meta property="og:title" content="Chime68">
   <meta property="og:description" content="A classic Macintosh emulator written in Rust, from the Mac Plus to the Quadra 950.">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e0e11" media="(prefers-color-scheme: dark)">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
   <link rel="apple-touch-icon" href="img/icon.png">
-  <link rel="preload" href="fonts/chime68.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 
-<nav class="menubar" aria-label="Sections">
-  <a class="apple" href="#top" aria-label="Chime68, back to the top"><img class="pixelated" src="img/favicon-32.png" alt="" width="32" height="32"></a>
-  <a href="#macs">Macs</a>
-  <a href="#features">Features</a>
-  <a href="#systems">Systems</a>
-  <a href="#get">Get it</a>
-  <a href="#run">Run it</a>
-  <a href="#roms">ROMs</a>
-  <a class="right" href="https://github.com/pepito2k/chime68">GitHub</a>
-</nav>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/favicon-32.png" alt="" width="32" height="32">Chime68</a>
+    <nav class="site-nav" aria-label="Sections">
+      <a href="#features">Features</a>
+      <a href="#macs">Macs</a>
+      <a href="#systems">Systems</a>
+      <a href="#run">Run it</a>
+      <a href="#roms">ROMs</a>
+      <a href="https://github.com/pepito2k/chime68">GitHub</a>
+      <a class="button" href="#get">Download</a>
+    </nav>
+  </div>
+</header>
 
 <main id="top">
 
-  <article class="window hero" aria-labelledby="hero-title">
-    <div class="titlebar"><span>Chime68</span></div>
-    <div class="content">
+  <div class="hero">
+    <div class="wrap hero-grid">
       <div>
-        <h1 id="hero-title"><img class="pixelated" src="img/icon.png" alt="" width="64" height="64">Chime68</h1>
-        <p class="lede">A classic Macintosh emulator, written in Rust.</p>
-        <p>It runs the 68k Macs, from the Macintosh Plus and the SE through the Mac II, the SE/30 and the IIci to the Quadra 700, 900 and 950 and the PowerBook 140 and 170, and boots everything from System 6 to Mac OS 8.1. Colour, sound, floppies, SCSI disks and CDs, Ethernet out to the Internet, LocalTalk, save states and printing to PDF are all in.</p>
-        <p class="muted">Free and open source under the MIT licence. Bring your own ROM.</p>
+        <span class="eyebrow">68000 / 68020 / 68030 / 68040</span>
+        <h1>The classic Mac, <em>back on your desk.</em></h1>
+        <p class="lede">Chime68 is a Macintosh emulator written in Rust. It runs the 68k Macs from the Plus and the SE to the Quadra 950 and the PowerBook 170, and boots everything from System 6 to Mac OS 8.1, with colour, sound, CDs and the Internet.</p>
         <div class="buttons">
-          <a class="button default" href="#get">Get Chime68</a>
-          <a class="button" href="https://github.com/pepito2k/chime68">Source</a>
+          <a class="button primary" href="#get">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+            Get Chime68
+          </a>
+          <a class="button" href="https://github.com/pepito2k/chime68">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+            View source
+          </a>
         </div>
+        <p class="note">Free and open source, MIT licence. Bring your own ROM.</p>
       </div>
-      <figure>
+      <figure class="shot">
         <img src="img/setup-window.png" alt="Chime68's setup window, drawn like a System 7 dialog: a Quadra 700 ROM, 20 MB of memory, a System 7.5.3 disk on SCSI ID 0, a shared host folder, speed and port settings, and Quit and Start buttons." width="1024" height="892">
-        <figcaption>The setup window, where you pick the ROM, memory, disks and ports, then Start.</figcaption>
       </figure>
     </div>
-  </article>
-
-  <section class="window" id="macs" aria-labelledby="macs-title">
-    <h2 class="titlebar" id="macs-title"><span>The Macs</span></h2>
-    <div class="content">
-      <p>The ROM you give Chime68 picks the Mac: it reads the checksum at the start of the ROM, names the machine it found, and builds that machine around it. Where one ROM serves several Macs, the Machine pop-up in the setup window (or <code>--model</code>) chooses between them.</p>
-
-      <h3 class="family">The compact Macs</h3>
-      <ul class="macs">
-        <li>
-          <h3>Macintosh Plus</h3>
-          <dl>
-            <dt>CPU</dt><dd>68000 at 7.83 MHz</dd>
-            <dt>Memory</dt><dd>Up to 4 MB</dd>
-            <dt>Screen</dt><dd>512 &times; 342, black and white</dd>
-            <dt>Disks</dt><dd>800K floppy, SCSI</dd>
-          </dl>
-        </li>
-        <li>
-          <h3>Macintosh SE</h3>
-          <dl>
-            <dt>CPU</dt><dd>68000 at 7.83 MHz</dd>
-            <dt>Memory</dt><dd>Up to 4 MB</dd>
-            <dt>Screen</dt><dd>512 &times; 342, black and white</dd>
-            <dt>Extras</dt><dd>Apple Desktop Bus keyboard and mouse</dd>
-          </dl>
-        </li>
-        <li>
-          <h3>SE FDHD</h3>
-          <dl>
-            <dt>CPU</dt><dd>68000 at 7.83 MHz</dd>
-            <dt>Memory</dt><dd>Up to 4 MB</dd>
-            <dt>Screen</dt><dd>512 &times; 342, black and white</dd>
-            <dt>Disks</dt><dd>SuperDrive: 800K, 720K and 1.44 MB floppies</dd>
-          </dl>
-        </li>
-        <li>
-          <h3>Macintosh Classic</h3>
-          <dl>
-            <dt>CPU</dt><dd>68000 at 7.83 MHz</dd>
-            <dt>Memory</dt><dd>Up to 4 MB</dd>
-            <dt>Screen</dt><dd>512 &times; 342, black and white</dd>
-            <dt>Disks</dt><dd>SuperDrive, SCSI</dd>
-          </dl>
-        </li>
-      </ul>
-
-      <h3 class="family">The Mac II family</h3>
-      <ul class="macs">
-        <li>
-          <h3>Macintosh II</h3>
-          <dl>
-            <dt>CPU</dt><dd>68020 and 68881 at 15.67 MHz, 68851 PMMU</dd>
-            <dt>Memory</dt><dd>1 to 8 MB</dd>
-            <dt>Screen</dt><dd>640 &times; 480 up to 1152 &times; 870, up to 256 colours, on a NuBus card</dd>
-            <dt>Also</dt><dd>The II FDHD, with its SuperDrive</dd>
-          </dl>
-        </li>
-        <li>
-          <h3>Macintosh SE/30</h3>
-          <dl>
-            <dt>CPU</dt><dd>68030 and 68882</dd>
-            <dt>Memory</dt><dd>1 to 128 MB</dd>
-            <dt>Screen</dt><dd>512 &times; 342, black and white</dd>
-            <dt>Extras</dt><dd>Ethernet in the processor-direct slot</dd>
-          </dl>
-        </li>
-        <li>
-          <h3>Macintosh IIci</h3>
-          <dl>
-            <dt>CPU</dt><dd>68030 at 25 MHz</dd>
-            <dt>Memory</dt><dd>4 to 128 MB</dd>
-            <dt>Screen</dt><dd>13" colour, 12" or 15" Portrait, up to 256 colours</dd>
-            <dt>Extras</dt><dd>32-bit clean, virtual memory</dd>
-          </dl>
-        </li>
-      </ul>
-
-      <h3 class="family">The Quadras</h3>
-      <ul class="macs">
-        <li>
-          <h3>Quadra 700</h3>
-          <dl>
-            <dt>CPU</dt><dd>68040 at 25 MHz, with its MMU and FPU</dd>
-            <dt>Memory</dt><dd>4 to 68 MB</dd>
-            <dt>Screen</dt><dd>DAFB video: 13", 16", 15" Portrait and 21" monitors, up to millions of colours</dd>
-            <dt>Extras</dt><dd>Built-in Ethernet, 53C96 SCSI</dd>
-          </dl>
-        </li>
-        <li>
-          <h3>Quadra 900</h3>
-          <dl>
-            <dt>CPU</dt><dd>68040 at 25 MHz</dd>
-            <dt>Memory</dt><dd>4 to 68 MB</dd>
-            <dt>Extras</dt><dd>Egret for the clock and power, I/O processors running Apple's own 65C02 firmware, a second SCSI bus</dd>
-          </dl>
-        </li>
-        <li>
-          <h3>Quadra 950</h3>
-          <dl>
-            <dt>CPU</dt><dd>68040 at 33 MHz</dd>
-            <dt>Memory</dt><dd>4 to 68 MB</dd>
-            <dt>Extras</dt><dd>As the Quadra 900, on its own ROM</dd>
-          </dl>
-        </li>
-      </ul>
-
-      <h3 class="family">The PowerBooks</h3>
-      <ul class="macs">
-        <li>
-          <h3>PowerBook 140</h3>
-          <dl>
-            <dt>CPU</dt><dd>68030 at 16 MHz, no FPU</dd>
-            <dt>Memory</dt><dd>2 to 8 MB</dd>
-            <dt>Screen</dt><dd>640 &times; 400 LCD, black and white</dd>
-            <dt>Extras</dt><dd>Power manager, trackball, processor cycling</dd>
-          </dl>
-        </li>
-        <li>
-          <h3>PowerBook 170</h3>
-          <dl>
-            <dt>CPU</dt><dd>68030 and 68882 at 25 MHz</dd>
-            <dt>Memory</dt><dd>4 to 8 MB</dd>
-            <dt>Screen</dt><dd>640 &times; 400 LCD, black and white</dd>
-            <dt>Extras</dt><dd>Power manager, trackball, processor cycling</dd>
-          </dl>
-        </li>
+    <div class="wrap">
+      <ul class="stats">
+        <li><strong>12 Macs</strong><span>Compact, Mac II, Quadra and PowerBook</span></li>
+        <li><strong>System 6 to 8.1</strong><span>Booted to the Finder and installed from CD</span></li>
+        <li><strong>99.6%</strong><span>of the 68000 SingleStepTests, cycle counts included</span></li>
+        <li><strong>Native and web</strong><span>macOS, Linux and Windows, and WebAssembly in a browser</span></li>
       </ul>
     </div>
-  </section>
+  </div>
 
-  <section class="window" id="features" aria-labelledby="features-title">
-    <h2 class="titlebar" id="features-title"><span>Features</span></h2>
-    <div class="content">
-      <div class="features">
-        <section>
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Features</span>
+        <h2>Everything the Mac had, and a few things it didn't.</h2>
+        <p>Real ROMs boot on emulated chips, so the System, its control panels and period software run as they did. Around that, Chime68 connects the Mac to the computer it's running on.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
           <h3>Colour and big screens</h3>
-          <p>Black and white up to 256 colours on the Mac II and IIci, and millions on the Quadra, set from the Monitors control panel. Bigger monitors up to 1152 &times; 870, drawn at whole-number scales so every Mac pixel stays square.</p>
-        </section>
-        <section>
-          <h3>More than one monitor</h3>
-          <p>The Mac II, IIci and Quadra 700 take a second monitor on a card of its own, shown in a second window. Arrange them in the Monitors control panel, and the mouse moves across both.</p>
-        </section>
-        <section>
+          <p>Black and white up to 256 colours on the Mac II and IIci, and millions on the Quadra. Monitors up to 1152 &times; 870, drawn at whole-number scales so every pixel stays sharp.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="9" height="10" rx="1.5"/><rect x="13" y="5" width="9" height="10" rx="1.5"/><path d="M5 19h3M16 19h3"/></svg></div>
+          <h3>A second monitor</h3>
+          <p>The Mac II, IIci and Quadra 700 take a second monitor on a card of its own, in a second window. Arrange them in the Monitors control panel and the mouse moves across both.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></div>
           <h3>Sound</h3>
-          <p>The startup chime, the boot beep, the Apple Sound Chip and the Sound Manager. The emulator is paced by the sound card, so sound doesn't stutter or drift.</p>
-        </section>
-        <section>
+          <p>The startup chime, the Apple Sound Chip and the Sound Manager. The emulator is paced by your sound card, so sound never stutters or drifts.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h13l3 3v13H4Z"/><path d="M8 4v5h7V4M8 20v-6h8v6"/></svg></div>
           <h3>Floppies and hard disks</h3>
-          <p>400K and 800K floppy images, raw or DiskCopy 4.2, and 1.44 MB floppies on SuperDrive Macs. Hard disk images from Apple's formatter, or bare HFS volumes as Mini vMac uses, on SCSI. What the Mac writes is saved back to the image, and blank images initialize in the Finder.</p>
-        </section>
-        <section>
+          <p>800K floppy images, raw or DiskCopy 4.2, 1.44 MB floppies on SuperDrive Macs, and SCSI hard disks, partitioned or bare HFS as Mini vMac uses. Writes are saved back to the image.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/></svg></div>
           <h3>CD-ROM and CD audio</h3>
-          <p>ISO, Toast and <code>.cdr</code> images in an AppleCD drive, so System 7.5 and Mac OS 7.6 and 8 install CDs start the Mac up and install. BIN/CUE images bring their audio tracks, and AppleCD Audio Player plays them.</p>
-        </section>
-        <section>
+          <p>ISO, Toast and BIN/CUE images in an AppleCD drive. System 7.5 and Mac OS 7.6 and 8 install CDs start the Mac up and install, and AppleCD Audio Player plays audio tracks.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
           <h3>Ethernet and the Internet</h3>
-          <p>Ethernet on a UDP multicast group that QEMU speaks too, for AppleShare over EtherTalk between Macs. Or a built-in NAT with DHCP and DNS, so MacTCP and Open Transport reach the Internet with no setup and no root.</p>
-        </section>
-        <section>
+          <p>A built-in NAT with DHCP and DNS takes MacTCP and Open Transport online with no setup and no root. Or put Macs on a shared Ethernet for AppleShare over EtherTalk.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 11l10-4M7 13l10 4"/></svg></div>
           <h3>LocalTalk</h3>
-          <p>The printer port on LocalTalk over UDP, as Mini vMac does it, so Chime68s on the same network see each other. A built-in bridge routes AppleTalk between LocalTalk and EtherTalk, so a Plus can mount a Quadra's shared disk.</p>
-        </section>
-        <section>
+          <p>LocalTalk over UDP, as Mini vMac does it, and a built-in bridge that routes AppleTalk to EtherTalk, so a Plus can mount a Quadra's shared disk.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8v4l3 2"/><path d="M3.5 12a8.5 8.5 0 1 0 2.5-6L3 9"/><path d="M3 4v5h5"/></svg></div>
           <h3>Save states</h3>
-          <p>F5 saves the whole machine, disks and all; Shift-F5 puts it back. Start from a saved state on the command line, too.</p>
-        </section>
-        <section>
+          <p>One key saves the whole machine, disks and all, and another puts it back exactly as it was. Start from a saved state on the command line, too.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="3" width="8" height="4" rx="1"/><path d="M8 5H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/></svg></div>
           <h3>Clipboard, files and folders</h3>
-          <p>Text copied on the Mac pastes on the host, and the other way round. Files dropped on the window land on the Mac's desktop, and a host folder mounts as a disk, resource forks and all.</p>
-        </section>
-        <section>
+          <p>Copy text on either side and paste on the other. Drop files on the window and they land on the Mac's desktop, or share a whole folder as a disk, resource forks and all.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6Z"/></svg></div>
           <h3>Print to PDF</h3>
-          <p>Choose the ImageWriter in the Chooser and print as usual: each job becomes a PDF on your desktop, in Faster, Best or Draft quality.</p>
-        </section>
-        <section>
+          <p>Choose the ImageWriter in the Chooser and print as usual. Each job becomes a PDF on your desktop.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg></div>
           <h3>Serial ports and a debugger</h3>
           <p>The modem and printer ports plug into a terminal, a file or a TCP connection. A debugger console with a disassembler, and a GDB stub, for looking inside.</p>
-        </section>
-        <section>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></div>
           <h3>In a web browser</h3>
-          <p>Chime68 builds to WebAssembly too: the Mac runs on a page, with sound, keeping your ROM and disks in the browser's own storage. Nothing leaves the browser.</p>
-        </section>
+          <p>Chime68 builds to WebAssembly, so the Mac runs on a web page with sound, keeping your ROM and disks in the browser's own storage. Nothing leaves the browser.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="window" id="systems" aria-labelledby="systems-title">
-    <h2 class="titlebar" id="systems-title"><span>System Software</span></h2>
-    <div class="content">
-      <p>Chime68 boots System 6 through Mac OS 8.1, on the Macs that ran them. These are the ones tried so far, to the Finder and beyond:</p>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr><th scope="col">System</th><th scope="col">Runs on</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>System 6.0.8</td><td>Plus, SE, SE FDHD, Classic, Mac II, SE/30, IIci</td></tr>
-            <tr><td>System 7.5 (7.5.3, 7.5.5)</td><td>Plus, Mac II, SE/30, IIci, Quadra 700, 900 and 950, PowerBook 140 and 170</td></tr>
-            <tr><td>Mac OS 7.6.1</td><td>IIci, Quadra 700, 900 and 950</td></tr>
-            <tr><td>Mac OS 8.0 and 8.1</td><td>Quadra 700</td></tr>
-          </tbody>
-        </table>
+  <section id="macs" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">The Macs</span>
+        <h2>From the Plus to the Quadra.</h2>
+        <p>The ROM you give Chime68 picks the Mac: it reads the ROM's checksum, names the machine, and builds that machine around it. Where one ROM serves several Macs, the setup window's Machine menu (or <code>--model</code>) chooses.</p>
       </div>
-      <p>System 7's virtual memory and 32-bit addressing work on the Macs that had them. Period software runs too: MacPaint, Lemmings in black and white and in colour, HyperCard, and Internet Explorer on Mac OS 8.1, browsing the web over plain HTTP.</p>
+      <div class="families">
+        <div class="family">
+          <header><h3>Compact Macs</h3><span>68000</span></header>
+          <p>7.83 MHz, up to 4 MB, and the 512 &times; 342 black-and-white screen.</p>
+          <ul class="machines">
+            <li><strong>Macintosh Plus</strong><span>800K floppy and SCSI</span></li>
+            <li><strong>Macintosh SE</strong><span>Apple Desktop Bus keyboard and mouse</span></li>
+            <li><strong>SE FDHD</strong><span>SuperDrive for 720K and 1.44 MB floppies</span></li>
+            <li><strong>Macintosh Classic</strong><span>SuperDrive and SCSI, on its 512 KB ROM</span></li>
+          </ul>
+        </div>
+        <div class="family">
+          <header><h3>Mac II family</h3><span>68020 / 68030</span></header>
+          <p>Colour, NuBus, and System 7's virtual memory and 32-bit addressing.</p>
+          <ul class="machines">
+            <li><strong>Macintosh II</strong><span>68020 and 68881 at 15.67 MHz, up to 8 MB, 256 colours on a NuBus card, and the II FDHD</span></li>
+            <li><strong>Macintosh SE/30</strong><span>68030 and 68882, 1 to 128 MB, black and white, Ethernet in its processor-direct slot</span></li>
+            <li><strong>Macintosh IIci</strong><span>68030 at 25 MHz, 4 to 128 MB, built-in video up to 256 colours</span></li>
+          </ul>
+        </div>
+        <div class="family">
+          <header><h3>Quadras</h3><span>68040</span></header>
+          <p>The 68040 with its MMU and FPU, DAFB video up to millions of colours, and built-in Ethernet.</p>
+          <ul class="machines">
+            <li><strong>Quadra 700</strong><span>25 MHz, 4 to 68 MB, 13" to 21" monitors</span></li>
+            <li><strong>Quadra 900</strong><span>Egret, and I/O processors running Apple's own 65C02 firmware</span></li>
+            <li><strong>Quadra 950</strong><span>The 900 at 33 MHz, on its own ROM</span></li>
+          </ul>
+        </div>
+        <div class="family">
+          <header><h3>PowerBooks</h3><span>68030</span></header>
+          <p>The 640 &times; 400 LCD, the power manager, the keyboard and trackball.</p>
+          <ul class="machines">
+            <li><strong>PowerBook 140</strong><span>16 MHz with no FPU, 2 to 8 MB</span></li>
+            <li><strong>PowerBook 170</strong><span>25 MHz with a 68882, 4 to 8 MB</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <div class="shots">
+  <section id="systems">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">System software</span>
+        <h2>System 6 through Mac OS 8.1.</h2>
+        <p>Each one boots to the Finder on the Macs that ran it. The newer ones start up from their own install CDs and install onto a hard disk image.</p>
+      </div>
+      <div class="systems">
+        <div class="card"><h3>System 6.0.8</h3><p>Plus, SE, SE FDHD, Classic, Mac II, SE/30 and IIci</p></div>
+        <div class="card"><h3>System 7.5</h3><p>Plus, Mac II, SE/30, IIci, the Quadras and the PowerBooks</p></div>
+        <div class="card"><h3>Mac OS 7.6.1</h3><p>IIci and Quadra 700, 900 and 950</p></div>
+        <div class="card"><h3>Mac OS 8.0 and 8.1</h3><p>Quadra 700</p></div>
+      </div>
+      <p class="systems-note">Period software runs too: MacPaint, Lemmings in black and white and in colour, HyperCard, and Internet Explorer on Mac OS 8.1, browsing the web over plain HTTP.</p>
+      <div class="gallery">
         <figure>
-          <img src="img/plus-system6.png" alt="A Macintosh Plus at the System 6.0.8 Finder, with the System 6.0.8 disk and the Trash on the desktop." width="512" height="342" loading="lazy">
+          <div class="shot"><img src="img/plus-system6.png" alt="A Macintosh Plus at the System 6.0.8 Finder, with the System 6.0.8 disk and the Trash on the desktop." width="512" height="342" loading="lazy"></div>
           <figcaption>Macintosh Plus, System 6.0.8</figcaption>
         </figure>
         <figure>
-          <img src="img/iici-system75.png" alt="A Macintosh IIci at the System 7.5.3 Finder, with its menu bar, clock and the Trash." width="640" height="480" loading="lazy">
+          <div class="shot"><img src="img/iici-system75.png" alt="A Macintosh IIci at the System 7.5.3 Finder, with its menu bar, clock and the Trash." width="640" height="480" loading="lazy"></div>
           <figcaption>Macintosh IIci, System 7.5.3</figcaption>
         </figure>
         <figure>
-          <img src="img/pb170-system75.png" alt="A PowerBook 170 at the System 7.5.3 Finder on its 640 by 400 screen, with the battery in the menu bar." width="640" height="400" loading="lazy">
+          <div class="shot"><img src="img/pb170-system75.png" alt="A PowerBook 170 at the System 7.5.3 Finder on its 640 by 400 screen, with the battery in the menu bar." width="640" height="400" loading="lazy"></div>
           <figcaption>PowerBook 170, System 7.5.3</figcaption>
         </figure>
       </div>
     </div>
   </section>
 
-  <section class="window" id="get" aria-labelledby="get-title">
-    <h2 class="titlebar" id="get-title"><span>Get Chime68</span></h2>
-    <div class="content split">
-      <div>
-        <h3>Download</h3>
-        <p>Ready-made binaries for macOS (Apple silicon and Intel), Linux and Windows are on the releases page, and for the Mac there is <strong>Chime68.app</strong>: unzip it, put it in Applications and double-click it.</p>
-        <p>The app isn't notarized, so the first time, Control-click it and choose Open. If your ROMs and disks are on the Desktop or in Documents, macOS asks once whether Chime68 may read them.</p>
-        <div class="buttons">
-          <a class="button default" href="https://github.com/pepito2k/chime68/releases">Releases</a>
-        </div>
+  <section id="get" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Get Chime68</span>
+        <h2>Download it, or build it.</h2>
       </div>
-      <div>
-        <h3>Build it</h3>
-        <p>With Rust installed:</p>
+      <div class="split">
+        <div class="card">
+          <h3>Download</h3>
+          <p>Ready-made binaries for macOS (Apple silicon and Intel), Linux and Windows are on the releases page, and for the Mac there is Chime68.app: unzip it, put it in Applications and double-click it.</p>
+          <p>The app isn't notarized, so the first time, Control-click it and choose Open.</p>
+          <div class="buttons"><a class="button primary" href="https://github.com/pepito2k/chime68/releases">Releases</a></div>
+        </div>
+        <div class="card">
+          <h3>Build from source</h3>
+          <p>With Rust installed:</p>
 <pre><code>git clone https://github.com/pepito2k/chime68
 cd chime68
 cargo build --release</code></pre>
-        <p>The binary is <code>target/release/chime68</code>. On Linux you need the ALSA headers first (<code>libasound2-dev</code> on Debian and Ubuntu). On a Mac, <code>scripts/bundle-macos.sh target/release/chime68</code> wraps it in Chime68.app.</p>
+          <p>The binary is <code>target/release/chime68</code>. On Linux, install the ALSA headers first (<code>libasound2-dev</code> on Debian and Ubuntu). On a Mac, <code>scripts/bundle-macos.sh target/release/chime68</code> wraps it in Chime68.app.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="window" id="run" aria-labelledby="run-title">
-    <h2 class="titlebar" id="run-title"><span>Run It</span></h2>
-    <div class="content">
+  <section id="run">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Run it</span>
+        <h2>Pick a ROM, pick a disk, Start.</h2>
+      </div>
       <div class="split">
-        <div>
+        <div class="card">
           <h3>The setup window</h3>
-          <p>Open Chime68.app, or run <code>chime68</code> with no arguments. Choose the ROM (which picks the Mac), memory, a floppy, SCSI disks and a CD, or just drop the files on the window. Set the speed, sound and what the ports are plugged into, then click Start.</p>
+          <p>Open Chime68.app, or run <code>chime68</code> with no arguments. Choose the ROM (which picks the Mac), memory, a floppy, SCSI disks and a CD, or drop the files on the window. Set the speed, sound and ports, then click Start.</p>
           <p>Quitting the Mac brings you back to it, and it remembers the last setup.</p>
         </div>
-        <div>
+        <div class="card">
           <h3>The command line</h3>
 <pre><code>chime68 --rom MacPlus.rom --scsi System608.dsk</code></pre>
           <p>The startup chime plays, the memory test runs fast, and the Finder comes up in a few seconds. Drop more disk images on the window to mount them. <code>--cd</code>, <code>--folder</code>, <code>--internet</code>, <code>--printer pdf</code> and the rest are in the README.</p>
         </div>
       </div>
 
-      <h2>Keys</h2>
-      <p>The host's mouse and keyboard are the Mac's: Command is Command or Control, and Option is Option or Alt. These keys work the emulator instead:</p>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr><th scope="col">Key</th><th scope="col">Does</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>F5 / Shift-F5</td><td>Save the machine's state / restore it</td></tr>
-            <tr><td>F8</td><td>Eject the floppy</td></tr>
-            <tr><td>Shift-F9</td><td>Press the reset button</td></tr>
-            <tr><td>F10</td><td>Next speed: 1x, 2x, 4x, 8x, max</td></tr>
-            <tr><td>F11 or Command-Control-F</td><td>Full screen on and off</td></tr>
-            <tr><td>F12</td><td>Switch between the current speed and max</td></tr>
-            <tr><td>Command-Control-Q</td><td>Quit</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p>Choose Shut Down on the Mac before you quit, as you would on the real one, so the disks are left tidy.</p>
+      <h3 class="keys-title">Keys</h3>
+      <ul class="keys">
+        <li><span><kbd>F5</kbd> / <kbd>Shift-F5</kbd></span><span>Save the state / restore it</span></li>
+        <li><span><kbd>F8</kbd></span><span>Eject the floppy</span></li>
+        <li><span><kbd>Shift-F9</kbd></span><span>Press the reset button</span></li>
+        <li><span><kbd>F10</kbd></span><span>Next speed: 1x, 2x, 4x, 8x, max</span></li>
+        <li><span><kbd>F11</kbd></span><span>Full screen on and off</span></li>
+        <li><span><kbd>F12</kbd></span><span>Current speed or max</span></li>
+        <li><span><kbd>Command-Control-Q</kbd></span><span>Quit</span></li>
+        <li><span>Command, Option</span><span>Command or Control, Option or Alt</span></li>
+      </ul>
+      <p class="keys-note">Choose Shut Down on the Mac before you quit, as you would on the real one.</p>
     </div>
   </section>
 
-  <section class="window" id="roms" aria-labelledby="roms-title">
-    <h2 class="titlebar" id="roms-title"><span>About ROMs</span></h2>
-    <div class="content">
-      <div class="alert" role="note">
-        <svg viewBox="0 0 32 32" aria-hidden="true" shape-rendering="crispEdges">
-          <path d="M16 2 L31 29 H1 Z" fill="#fff" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
-          <rect x="14.5" y="10" width="3" height="11" fill="#000"/>
-          <rect x="14.5" y="23" width="3" height="3" fill="#000"/>
-        </svg>
+  <section id="roms" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">ROMs</span>
+        <h2>Bring your own ROM.</h2>
+      </div>
+      <div class="callout" role="note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20Z"/><path d="M12 10v4M12 17h.01"/></svg>
         <div>
           <h3>Chime68 doesn't come with any ROMs.</h3>
           <p>A Mac's ROM is Apple's copyright, so you supply your own: dump the one in a Mac you own, or use a dump you are entitled to. Chime68 doesn't ship any, and this site doesn't link to any. System software and applications are yours to bring, too.</p>
         </div>
       </div>
-      <p>These are the ROMs Chime68 knows, with the checksum it finds in their first four bytes:</p>
       <div class="table-wrap">
         <table>
           <thead>
@@ -351,7 +295,7 @@ cargo build --release</code></pre>
           </thead>
           <tbody>
             <tr><td>Macintosh Plus, 128 KB (v1, v2 or v3)</td><td>Macintosh Plus</td></tr>
-            <tr><td>Macintosh SE, SE FDHD, 256 KB</td><td>SE, SE FDHD</td></tr>
+            <tr><td>Macintosh SE and SE FDHD, 256 KB</td><td>SE, SE FDHD</td></tr>
             <tr><td>Macintosh Classic, 512 KB</td><td>Classic</td></tr>
             <tr><td>Macintosh II, <code>97851DB6</code> or <code>9779D2C4</code></td><td>Macintosh II</td></tr>
             <tr><td>II FDHD, IIx and IIcx, <code>97221136</code></td><td>II FDHD or SE/30</td></tr>
@@ -361,28 +305,33 @@ cargo build --release</code></pre>
           </tbody>
         </table>
       </div>
-      <p>Disks can be floppy images, hard disk images or a blank file of zeros, which the Finder initializes: <code>mkfile -n 40m blank.img</code> on a Mac, or <code>truncate -s 40M blank.img</code> elsewhere.</p>
+      <p class="after">Disks can be floppy images, hard disk images, or a blank file of zeros that the Finder initializes: <code>mkfile -n 40m blank.img</code> on a Mac, or <code>truncate -s 40M blank.img</code> elsewhere.</p>
     </div>
   </section>
 
-  <section class="window" id="browser" aria-labelledby="browser-title">
-    <h2 class="titlebar" id="browser-title"><span>In a Browser</span></h2>
-    <div class="content">
-      <p>Chime68 also runs in a web browser, as WebAssembly. In a checkout of the source:</p>
+  <section id="browser">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">In a browser</span>
+        <h2>The same Mac, on a web page.</h2>
+        <p>Chime68 also builds to WebAssembly. Your ROM and disks stay in the browser's storage for the next visit, and what the Mac writes is saved back to the browser's copies. The browser build has no networking, serial ports, printer, debugger or save states.</p>
+      </div>
 <pre><code>scripts/build-web.sh
 python3 -m http.server -d target/web 8068</code></pre>
-      <p>Then open <code>http://localhost:8068</code>, pick a ROM and disk images with the page's file inputs, choose the machine and memory, and Start. Your files stay in the browser's storage for the next visit, and what the Mac writes is saved back to the browser's copies. The browser build has no networking, serial ports, printer, debugger or save states.</p>
+      <p class="after">Then open <code>http://localhost:8068</code>, pick a ROM and disk images, choose the machine and memory, and Start.</p>
     </div>
   </section>
 
 </main>
 
-<footer>
-  <div class="window">
-    <div class="content">
-      <p><strong class="pixel">Chime68</strong> is free software under the MIT licence. <a href="https://github.com/pepito2k/chime68">Source on GitHub</a> &middot; <a href="https://github.com/pepito2k/chime68/blob/main/CHANGELOG.md">Changelog</a></p>
-      <p class="muted">Macintosh, PowerBook, Quadra and Mac OS are trademarks of Apple Inc. Chime68 is an independent project, not affiliated with or endorsed by Apple.</p>
-    </div>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Chime68 is free software under the MIT licence. Macintosh, PowerBook, Quadra and Mac OS are trademarks of Apple Inc.; Chime68 is an independent project, not affiliated with or endorsed by Apple.</p>
+    <nav aria-label="Links">
+      <a href="https://github.com/pepito2k/chime68">GitHub</a>
+      <a href="https://github.com/pepito2k/chime68/releases">Releases</a>
+      <a href="https://github.com/pepito2k/chime68/blob/main/CHANGELOG.md">Changelog</a>
+    </nav>
   </div>
 </footer>
 
