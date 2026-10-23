@@ -38,7 +38,7 @@
       <div>
         <span class="eyebrow">68000 / 68020 / 68030 / 68040</span>
         <h1>The classic Mac, <em>back on your desk.</em></h1>
-        <p class="lede">Chime68 is a Macintosh emulator written in Rust. It runs 47 of the 68k Macs, from the 128K to the Quadra 800 and the PowerBook Duo 280c, and boots everything from System 1.0 to Mac OS 8.1, with colour, sound, CDs and the Internet.</p>
+        <p class="lede">Chime68 is a Macintosh emulator written in Rust. It runs 49 of the 68k Macs, from the 128K to the Quadra 840AV and the PowerBook Duo 280c, and boots everything from System 1.0 to Mac OS 8.1, with colour, sound, CDs and the Internet.</p>
         <div class="buttons">
           <a class="button primary" href="#get">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
@@ -57,7 +57,7 @@
     </div>
     <div class="wrap">
       <ul class="stats">
-        <li><strong>47 Macs</strong><span>Compact, Mac II, LC, Quadra and PowerBook</span></li>
+        <li><strong>49 Macs</strong><span>Compact, Mac II, LC, Quadra and PowerBook</span></li>
         <li><strong>System 1.0 to 8.1</strong><span>Booted to the Finder and installed from CD</span></li>
         <li><strong>99.6%</strong><span>of the 68000 SingleStepTests, cycle counts included</span></li>
         <li><strong>Native and web</strong><span>macOS, Linux and Windows, and WebAssembly in a browser</span></li>
@@ -86,7 +86,7 @@
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></div>
           <h3>Sound</h3>
-          <p>The startup chime, the Apple Sound Chip and the Sound Manager. The emulator is paced by your sound card, so sound never stutters or drifts.</p>
+          <p>The startup chime, the Apple Sound Chip and the Sound Manager, and the AV Quadras' DSP3210 signal processor. The emulator is paced by your sound card, so sound never stutters or drifts.</p>
         </div>
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h13l3 3v13H4Z"/><path d="M8 4v5h7V4M8 20v-6h8v6"/></svg></div>
@@ -186,6 +186,7 @@
             <li><strong>Quadra 800, 650 and 610, Centris 650 and 610</strong><span>20 to 33 MHz, up to 136 MB</span></li>
             <li><strong>Quadra 605</strong><span>A cut-down Quadra with Cuda</span></li>
             <li><strong>Quadra 630</strong><span>33 MHz, Valkyrie video, and an internal IDE disk</span></li>
+            <li><strong>Quadra 840AV and 660AV</strong><span>40 and 25 MHz, Civic video up to millions of colours, MACE Ethernet, and the DSP3210 playing the System's sounds</span></li>
           </ul>
         </div>
         <div class="family">
@@ -213,7 +214,7 @@
         <div class="card"><h3>System 1.0 to 6.0.8</h3><p>The 128K, 512K and 512Ke, Plus, SE, Classic, Mac II, SE/30 and IIci</p></div>
         <div class="card"><h3>System 7.5</h3><p>Every Mac from the Plus on: the Mac IIs, LCs, Quadras and PowerBooks</p></div>
         <div class="card"><h3>Mac OS 7.6.1</h3><p>IIci, the Quadras, and the Quadra 630 from its IDE disk</p></div>
-        <div class="card"><h3>Mac OS 8.0 and 8.1</h3><p>Quadra 700</p></div>
+        <div class="card"><h3>Mac OS 8.0 and 8.1</h3><p>Quadra 700 and 840AV</p></div>
       </div>
       <p class="systems-note">Period software runs too: MacPaint, Lemmings in black and white and in colour, HyperCard, and Internet Explorer on Mac OS 8.1, browsing the web over plain HTTP.</p>
       <div class="gallery">
@@ -250,6 +251,10 @@
           <figcaption>Quadra 630, Mac OS 7.6.1 on IDE</figcaption>
         </figure>
         <figure>
+          <div class="shot"><img src="img/q840av.png" alt="A Quadra 840AV at the Mac OS 7.6.1 Finder in thousands of colours, with About This Computer showing 32 MB." width="640" height="480" loading="lazy"></div>
+          <figcaption>Quadra 840AV, Mac OS 7.6.1</figcaption>
+        </figure>
+        <figure>
           <div class="shot"><img src="img/duo270c.png" alt="A PowerBook Duo 270c at the System 7.5.3 Finder on its colour screen, with About This Macintosh." width="640" height="480" loading="lazy"></div>
           <figcaption>PowerBook Duo 270c, System 7.5.3</figcaption>
         </figure>
@@ -266,16 +271,16 @@
       <div class="split">
         <div class="card">
           <h3>Download</h3>
-          <p>Version 0.48.0, ready-made for macOS, Linux and Windows. On a Mac, Chime68.app runs on Apple silicon and Intel: unzip it, put it in Applications and double-click it.</p>
+          <p>Version 0.53.0, ready-made for macOS, Linux and Windows. On a Mac, Chime68.app runs on Apple silicon and Intel: unzip it, put it in Applications and double-click it.</p>
           <p>The app isn't notarized, so the first time, Control-click it and choose Open.</p>
           <ul class="downloads">
-            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.48.0/Chime68-v0.48.0-macos.zip">Chime68.app</a><span>macOS, Apple silicon and Intel</span></li>
-            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.48.0/chime68-v0.48.0-macos-arm64.tar.gz">chime68</a><span>macOS command line, Apple silicon</span></li>
-            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.48.0/chime68-v0.48.0-macos-x86_64.tar.gz">chime68</a><span>macOS command line, Intel</span></li>
-            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.48.0/chime68-v0.48.0-linux-x86_64.tar.gz">chime68</a><span>Linux, x86-64</span></li>
-            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.48.0/chime68-v0.48.0-windows-x86_64.zip">chime68.exe</a><span>Windows, x86-64</span></li>
+            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.53.0/Chime68-v0.53.0-macos.zip">Chime68.app</a><span>macOS, Apple silicon and Intel</span></li>
+            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.53.0/chime68-v0.53.0-macos-arm64.tar.gz">chime68</a><span>macOS command line, Apple silicon</span></li>
+            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.53.0/chime68-v0.53.0-macos-x86_64.tar.gz">chime68</a><span>macOS command line, Intel</span></li>
+            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.53.0/chime68-v0.53.0-linux-x86_64.tar.gz">chime68</a><span>Linux, x86-64</span></li>
+            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.53.0/chime68-v0.53.0-windows-x86_64.zip">chime68.exe</a><span>Windows, x86-64</span></li>
           </ul>
-          <div class="buttons"><a class="button" href="https://github.com/pepito2k/chime68/releases/tag/v0.48.0">Release notes</a></div>
+          <div class="buttons"><a class="button" href="https://github.com/pepito2k/chime68/releases/tag/v0.53.0">Release notes</a></div>
         </div>
         <div class="card">
           <h3>Build from source</h3>
@@ -360,6 +365,7 @@ cargo build --release</code></pre>
             <tr><td>Quadra 800, 650, 610 and Centris 650, 610, <code>F1ACAD13</code> or <code>F1A6F343</code></td><td>Any of the five</td></tr>
             <tr><td>Quadra 605 and LC 475, <code>FF7439EE</code></td><td>Quadra 605 or LC 475</td></tr>
             <tr><td>Quadra and LC 630, <code>06684214</code>; LC 580, <code>064DC91D</code></td><td>Quadra 630, LC 630, LC 580</td></tr>
+            <tr><td>Quadra 840AV and 660AV, <code>5BF10FD1</code> (2 MB)</td><td>Quadra 840AV or 660AV</td></tr>
             <tr><td>Macintosh Portable, <code>96CA3846</code>; PowerBook 100, <code>96645F9C</code></td><td>Portable, PowerBook 100</td></tr>
             <tr><td>PowerBook 160 and 180, <code>E33B2724</code></td><td>PowerBook 160 or 180</td></tr>
             <tr><td>PowerBook Duo 210, 230 and 250, <code>ECFA989B</code>; 270c, <code>0024D346</code>; 280 and 280c, <code>015621D7</code></td><td>The Duos</td></tr>
