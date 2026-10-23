@@ -38,7 +38,7 @@
       <div>
         <span class="eyebrow">68000 / 68020 / 68030 / 68040</span>
         <h1>The classic Mac, <em>back on your desk.</em></h1>
-        <p class="lede">Chime68 is a Macintosh emulator written in Rust. It runs the 68k Macs from the Plus and the SE to the Quadra 950 and the PowerBook 170, and boots everything from System 6 to Mac OS 8.1, with colour, sound, CDs and the Internet.</p>
+        <p class="lede">Chime68 is a Macintosh emulator written in Rust. It runs 49 of the 68k Macs, from the 128K to the Quadra 840AV and the PowerBook Duo 280c, and boots everything from System 1.0 to Mac OS 8.1, with colour, sound, CDs and the Internet.</p>
         <div class="buttons">
           <a class="button primary" href="#get">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
@@ -57,8 +57,8 @@
     </div>
     <div class="wrap">
       <ul class="stats">
-        <li><strong>12 Macs</strong><span>Compact, Mac II, Quadra and PowerBook</span></li>
-        <li><strong>System 6 to 8.1</strong><span>Booted to the Finder and installed from CD</span></li>
+        <li><strong>49 Macs</strong><span>Compact, Mac II, LC, Quadra and PowerBook</span></li>
+        <li><strong>System 1.0 to 8.1</strong><span>Booted to the Finder and installed from CD</span></li>
         <li><strong>99.6%</strong><span>of the 68000 SingleStepTests, cycle counts included</span></li>
         <li><strong>Native and web</strong><span>macOS, Linux and Windows, and WebAssembly in a browser</span></li>
       </ul>
@@ -76,7 +76,7 @@
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
           <h3>Colour and big screens</h3>
-          <p>Black and white up to 256 colours on the Mac II and IIci, and millions on the Quadra. Monitors up to 1152 &times; 870, drawn at whole-number scales so every pixel stays sharp.</p>
+          <p>Black and white up to 256 colours on the Mac II and IIci, thousands on the LC III and the Color Classic, and millions on the Quadra. Monitors up to 1152 &times; 870, drawn at whole-number scales so every pixel stays sharp.</p>
         </div>
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="9" height="10" rx="1.5"/><rect x="13" y="5" width="9" height="10" rx="1.5"/><path d="M5 19h3M16 19h3"/></svg></div>
@@ -86,12 +86,12 @@
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></div>
           <h3>Sound</h3>
-          <p>The startup chime, the Apple Sound Chip and the Sound Manager. The emulator is paced by your sound card, so sound never stutters or drifts.</p>
+          <p>The startup chime, the Apple Sound Chip and the Sound Manager, and the AV Quadras' DSP3210 signal processor. The emulator is paced by your sound card, so sound never stutters or drifts.</p>
         </div>
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h13l3 3v13H4Z"/><path d="M8 4v5h7V4M8 20v-6h8v6"/></svg></div>
           <h3>Floppies and hard disks</h3>
-          <p>800K floppy images, raw or DiskCopy 4.2, 1.44 MB floppies on SuperDrive Macs, and SCSI hard disks, partitioned or bare HFS as Mini vMac uses. Writes are saved back to the image.</p>
+          <p>400K and 800K floppy images, raw or DiskCopy 4.2, 1.44 MB floppies on SuperDrive Macs, SCSI hard disks, partitioned or bare HFS as Mini vMac uses, and the Quadra 630's IDE disk. Writes are saved back to the image.</p>
         </div>
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/></svg></div>
@@ -141,44 +141,62 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">The Macs</span>
-        <h2>From the Plus to the Quadra.</h2>
+        <h2>From the 128K to the Quadra.</h2>
         <p>The ROM you give Chime68 picks the Mac: it reads the ROM's checksum, names the machine, and builds that machine around it. Where one ROM serves several Macs, the setup window's Machine menu (or <code>--model</code>) chooses.</p>
       </div>
       <div class="families">
         <div class="family">
-          <header><h3>Compact Macs</h3><span>68000</span></header>
-          <p>7.83 MHz, up to 4 MB, and the 512 &times; 342 black-and-white screen.</p>
+          <header><h3>Compact Macs</h3><span>68000 / 68030</span></header>
+          <p>The 9" screen, from the first Mac to the Color Classic.</p>
           <ul class="machines">
+            <li><strong>Macintosh 128K, 512K and 512Ke</strong><span>400K and 800K floppies, System 1.0 to 6</span></li>
             <li><strong>Macintosh Plus</strong><span>800K floppy and SCSI</span></li>
-            <li><strong>Macintosh SE</strong><span>Apple Desktop Bus keyboard and mouse</span></li>
-            <li><strong>SE FDHD</strong><span>SuperDrive for 720K and 1.44 MB floppies</span></li>
+            <li><strong>SE and SE FDHD</strong><span>The Apple Desktop Bus, and the SuperDrive</span></li>
             <li><strong>Macintosh Classic</strong><span>SuperDrive and SCSI, on its 512 KB ROM</span></li>
+            <li><strong>Classic II</strong><span>A 16 MHz 68030 with up to 10 MB</span></li>
+            <li><strong>Color Classic</strong><span>Its own 512 &times; 384 colour screen, up to thousands of colours</span></li>
           </ul>
         </div>
         <div class="family">
           <header><h3>Mac II family</h3><span>68020 / 68030</span></header>
           <p>Colour, NuBus, and System 7's virtual memory and 32-bit addressing.</p>
           <ul class="machines">
-            <li><strong>Macintosh II</strong><span>68020 and 68881 at 15.67 MHz, up to 8 MB, 256 colours on a NuBus card, and the II FDHD</span></li>
-            <li><strong>Macintosh SE/30</strong><span>68030 and 68882, 1 to 128 MB, black and white, Ethernet in its processor-direct slot</span></li>
-            <li><strong>Macintosh IIci</strong><span>68030 at 25 MHz, 4 to 128 MB, built-in video up to 256 colours</span></li>
+            <li><strong>Macintosh II and II FDHD</strong><span>68020 and 68881 at 15.67 MHz, 256 colours on a NuBus card</span></li>
+            <li><strong>IIx, IIcx and SE/30</strong><span>68030 and 68882; the SE/30 in black and white, with Ethernet</span></li>
+            <li><strong>IIci and IIsi</strong><span>Built-in video up to 256 colours; the IIci takes Apple's cache card</span></li>
+            <li><strong>IIfx</strong><span>40 MHz, with the SCC and SWIM behind I/O processors</span></li>
+            <li><strong>IIvx and IIvi</strong><span>VASP video and the Enhanced ASC</span></li>
           </ul>
         </div>
         <div class="family">
-          <header><h3>Quadras</h3><span>68040</span></header>
+          <header><h3>LCs</h3><span>68020 / 68030 / 68040</span></header>
+          <p>Apple's low-cost colour Macs, with Egret or Cuda keeping the clock and running ADB.</p>
+          <ul class="machines">
+            <li><strong>LC and LC II</strong><span>V8's 24-bit machine, 4 to 10 MB</span></li>
+            <li><strong>LC III</strong><span>25 MHz, up to 36 MB, thousands of colours</span></li>
+            <li><strong>LC 475</strong><span>The Quadra 605 with a 68LC040</span></li>
+            <li><strong>LC 630 and LC 580</strong><span>The Quadra 630, with an IDE hard disk</span></li>
+          </ul>
+        </div>
+        <div class="family">
+          <header><h3>Quadras and Centrises</h3><span>68040</span></header>
           <p>The 68040 with its MMU and FPU, DAFB video up to millions of colours, and built-in Ethernet.</p>
           <ul class="machines">
-            <li><strong>Quadra 700</strong><span>25 MHz, 4 to 68 MB, 13" to 21" monitors</span></li>
-            <li><strong>Quadra 900</strong><span>Egret, and I/O processors running Apple's own 65C02 firmware</span></li>
-            <li><strong>Quadra 950</strong><span>The 900 at 33 MHz, on its own ROM</span></li>
+            <li><strong>Quadra 700, 900 and 950</strong><span>13" to 21" monitors; the 900 and 950 with Egret and I/O processors running Apple's own 65C02 firmware</span></li>
+            <li><strong>Quadra 800, 650 and 610, Centris 650 and 610</strong><span>20 to 33 MHz, up to 136 MB</span></li>
+            <li><strong>Quadra 605</strong><span>A cut-down Quadra with Cuda</span></li>
+            <li><strong>Quadra 630</strong><span>33 MHz, Valkyrie video, and an internal IDE disk</span></li>
+            <li><strong>Quadra 840AV and 660AV</strong><span>40 and 25 MHz, Civic video up to millions of colours, MACE Ethernet, and the DSP3210 playing the System's sounds</span></li>
           </ul>
         </div>
         <div class="family">
-          <header><h3>PowerBooks</h3><span>68030</span></header>
-          <p>The 640 &times; 400 LCD, the power manager, the keyboard and trackball.</p>
+          <header><h3>PowerBooks</h3><span>68000 / 68030 / 68040</span></header>
+          <p>The LCDs, the power manager with sleep and the battery, the keyboard and trackball.</p>
           <ul class="machines">
-            <li><strong>PowerBook 140</strong><span>16 MHz with no FPU, 2 to 8 MB</span></li>
-            <li><strong>PowerBook 170</strong><span>25 MHz with a 68882, 4 to 8 MB</span></li>
+            <li><strong>Macintosh Portable and PowerBook 100</strong><span>68000, with an active-matrix LCD</span></li>
+            <li><strong>PowerBook 140, 170, 160 and 180</strong><span>640 &times; 400, in 16 grays on the 160 and 180</span></li>
+            <li><strong>PowerBook Duo 210, 230, 250 and 270c</strong><span>The Duos, the 270c in colour</span></li>
+            <li><strong>PowerBook Duo 280 and 280c</strong><span>68040 at 33 MHz</span></li>
           </ul>
         </div>
       </div>
@@ -189,14 +207,14 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">System software</span>
-        <h2>System 6 through Mac OS 8.1.</h2>
+        <h2>System 1.0 through Mac OS 8.1.</h2>
         <p>Each one boots to the Finder on the Macs that ran it. The newer ones start up from their own install CDs and install onto a hard disk image.</p>
       </div>
       <div class="systems">
-        <div class="card"><h3>System 6.0.8</h3><p>Plus, SE, SE FDHD, Classic, Mac II, SE/30 and IIci</p></div>
-        <div class="card"><h3>System 7.5</h3><p>Plus, Mac II, SE/30, IIci, the Quadras and the PowerBooks</p></div>
-        <div class="card"><h3>Mac OS 7.6.1</h3><p>IIci and Quadra 700, 900 and 950</p></div>
-        <div class="card"><h3>Mac OS 8.0 and 8.1</h3><p>Quadra 700</p></div>
+        <div class="card"><h3>System 1.0 to 6.0.8</h3><p>The 128K, 512K and 512Ke, Plus, SE, Classic, Mac II, SE/30 and IIci</p></div>
+        <div class="card"><h3>System 7.5</h3><p>Every Mac from the Plus on: the Mac IIs, LCs, Quadras and PowerBooks</p></div>
+        <div class="card"><h3>Mac OS 7.6.1</h3><p>IIci, the Quadras, and the Quadra 630 from its IDE disk</p></div>
+        <div class="card"><h3>Mac OS 8.0 and 8.1</h3><p>Quadra 700 and 840AV</p></div>
       </div>
       <p class="systems-note">Period software runs too: MacPaint, Lemmings in black and white and in colour, HyperCard, and Internet Explorer on Mac OS 8.1, browsing the web over plain HTTP.</p>
       <div class="gallery">
@@ -205,12 +223,40 @@
           <figcaption>Macintosh Plus, System 6.0.8</figcaption>
         </figure>
         <figure>
+          <div class="shot"><img src="img/m128k.png" alt="A Macintosh 128K at the System 1.0 Finder, with the System Disk's window open." width="512" height="342" loading="lazy"></div>
+          <figcaption>Macintosh 128K, System 1.0</figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="img/classic2.png" alt="A Classic II in black and white at the System 7.5.3 Finder, with About This Macintosh showing 4 MB." width="512" height="342" loading="lazy"></div>
+          <figcaption>Classic II, System 7.5.3</figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="img/cc.png" alt="A Color Classic at the System 7.5.3 Finder in colour, with a purple desktop pattern and About This Macintosh." width="512" height="384" loading="lazy"></div>
+          <figcaption>Color Classic, System 7.5.3</figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="img/lc3.png" alt="An LC III at the System 7.5.3 Finder in colour, with About This Macintosh showing 8 MB." width="640" height="480" loading="lazy"></div>
+          <figcaption>LC III, System 7.5.3</figcaption>
+        </figure>
+        <figure>
           <div class="shot"><img src="img/iici-system75.png" alt="A Macintosh IIci at the System 7.5.3 Finder, with its menu bar, clock and the Trash." width="640" height="480" loading="lazy"></div>
           <figcaption>Macintosh IIci, System 7.5.3</figcaption>
         </figure>
         <figure>
-          <div class="shot"><img src="img/pb170-system75.png" alt="A PowerBook 170 at the System 7.5.3 Finder on its 640 by 400 screen, with the battery in the menu bar." width="640" height="400" loading="lazy"></div>
-          <figcaption>PowerBook 170, System 7.5.3</figcaption>
+          <div class="shot"><img src="img/q800.png" alt="A Quadra 800 at the System 7.5.3 Finder in colour, with a blue desktop pattern and About This Macintosh showing 24 MB." width="640" height="480" loading="lazy"></div>
+          <figcaption>Quadra 800, System 7.5.3</figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="img/q630.png" alt="A Quadra 630 at the Mac OS 7.6.1 Finder, started from its IDE disk, with About This Computer showing 20 MB." width="640" height="480" loading="lazy"></div>
+          <figcaption>Quadra 630, Mac OS 7.6.1 on IDE</figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="img/q840av.png" alt="A Quadra 840AV at the Mac OS 7.6.1 Finder in thousands of colours, with About This Computer showing 32 MB." width="640" height="480" loading="lazy"></div>
+          <figcaption>Quadra 840AV, Mac OS 7.6.1</figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="img/duo270c.png" alt="A PowerBook Duo 270c at the System 7.5.3 Finder on its colour screen, with About This Macintosh." width="640" height="480" loading="lazy"></div>
+          <figcaption>PowerBook Duo 270c, System 7.5.3</figcaption>
         </figure>
       </div>
     </div>
@@ -225,9 +271,16 @@
       <div class="split">
         <div class="card">
           <h3>Download</h3>
-          <p>Ready-made binaries for macOS (Apple silicon and Intel), Linux and Windows are on the releases page, and for the Mac there is Chime68.app: unzip it, put it in Applications and double-click it.</p>
+          <p>Version 0.53.0, ready-made for macOS, Linux and Windows. On a Mac, Chime68.app runs on Apple silicon and Intel: unzip it, put it in Applications and double-click it.</p>
           <p>The app isn't notarized, so the first time, Control-click it and choose Open.</p>
-          <div class="buttons"><a class="button primary" href="https://github.com/pepito2k/chime68/releases">Releases</a></div>
+          <ul class="downloads">
+            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.53.0/Chime68-v0.53.0-macos.zip">Chime68.app</a><span>macOS, Apple silicon and Intel</span></li>
+            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.53.0/chime68-v0.53.0-macos-arm64.tar.gz">chime68</a><span>macOS command line, Apple silicon</span></li>
+            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.53.0/chime68-v0.53.0-macos-x86_64.tar.gz">chime68</a><span>macOS command line, Intel</span></li>
+            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.53.0/chime68-v0.53.0-linux-x86_64.tar.gz">chime68</a><span>Linux, x86-64</span></li>
+            <li><a href="https://github.com/pepito2k/chime68/releases/download/v0.53.0/chime68-v0.53.0-windows-x86_64.zip">chime68.exe</a><span>Windows, x86-64</span></li>
+          </ul>
+          <div class="buttons"><a class="button" href="https://github.com/pepito2k/chime68/releases/tag/v0.53.0">Release notes</a></div>
         </div>
         <div class="card">
           <h3>Build from source</h3>
@@ -294,14 +347,28 @@ cargo build --release</code></pre>
             <tr><th scope="col">ROM</th><th scope="col">Runs as</th></tr>
           </thead>
           <tbody>
-            <tr><td>Macintosh Plus, 128 KB (v1, v2 or v3)</td><td>Macintosh Plus</td></tr>
+            <tr><td>Macintosh 128K and 512K, <code>28BA61CE</code> or <code>28BA4E50</code></td><td>128K, 512K</td></tr>
+            <tr><td>Macintosh Plus, 128 KB (v1, v2 or v3)</td><td>Plus or 512Ke</td></tr>
             <tr><td>Macintosh SE and SE FDHD, 256 KB</td><td>SE, SE FDHD</td></tr>
-            <tr><td>Macintosh Classic, 512 KB</td><td>Classic</td></tr>
+            <tr><td>Macintosh Classic, <code>A49F9914</code></td><td>Classic</td></tr>
             <tr><td>Macintosh II, <code>97851DB6</code> or <code>9779D2C4</code></td><td>Macintosh II</td></tr>
-            <tr><td>II FDHD, IIx and IIcx, <code>97221136</code></td><td>II FDHD or SE/30</td></tr>
+            <tr><td>II FDHD, IIx and IIcx, <code>97221136</code></td><td>II FDHD, IIx, IIcx or SE/30</td></tr>
             <tr><td>IIci, <code>368CADFE</code></td><td>IIci</td></tr>
+            <tr><td>IIsi, <code>36B7FB6C</code></td><td>IIsi</td></tr>
+            <tr><td>IIfx, <code>4147DD77</code></td><td>IIfx</td></tr>
+            <tr><td>IIvx and IIvi, <code>4957EB49</code></td><td>IIvx or IIvi</td></tr>
+            <tr><td>LC, <code>350EACF0</code>; LC II, <code>35C28F5F</code></td><td>LC, LC II</td></tr>
+            <tr><td>Classic II, <code>3193670E</code>; Color Classic, <code>ECD99DC0</code></td><td>Classic II, Color Classic</td></tr>
+            <tr><td>LC III, <code>ECBBC41C</code> or <code>EC904829</code></td><td>LC III</td></tr>
             <tr><td>Quadra 700 and 900, PowerBook 140 and 170, <code>420DBFF3</code></td><td>Quadra 700 or 900, PowerBook 140 or 170</td></tr>
             <tr><td>Quadra 950, <code>3DC27823</code></td><td>Quadra 950</td></tr>
+            <tr><td>Quadra 800, 650, 610 and Centris 650, 610, <code>F1ACAD13</code> or <code>F1A6F343</code></td><td>Any of the five</td></tr>
+            <tr><td>Quadra 605 and LC 475, <code>FF7439EE</code></td><td>Quadra 605 or LC 475</td></tr>
+            <tr><td>Quadra and LC 630, <code>06684214</code>; LC 580, <code>064DC91D</code></td><td>Quadra 630, LC 630, LC 580</td></tr>
+            <tr><td>Quadra 840AV and 660AV, <code>5BF10FD1</code> (2 MB)</td><td>Quadra 840AV or 660AV</td></tr>
+            <tr><td>Macintosh Portable, <code>96CA3846</code>; PowerBook 100, <code>96645F9C</code></td><td>Portable, PowerBook 100</td></tr>
+            <tr><td>PowerBook 160 and 180, <code>E33B2724</code></td><td>PowerBook 160 or 180</td></tr>
+            <tr><td>PowerBook Duo 210, 230 and 250, <code>ECFA989B</code>; 270c, <code>0024D346</code>; 280 and 280c, <code>015621D7</code></td><td>The Duos</td></tr>
           </tbody>
         </table>
       </div>
