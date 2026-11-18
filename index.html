@@ -25,7 +25,6 @@
       <a href="#systems">Systems</a>
       <a href="#run">Run it</a>
       <a href="#roms">ROMs</a>
-      <a href="https://github.com/pepito2k/chime68">GitHub</a>
       <a class="button" href="#get">Download</a>
     </nav>
   </div>
@@ -44,12 +43,9 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
             Get Chime68
           </a>
-          <a class="button" href="https://github.com/pepito2k/chime68">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
-            View source
-          </a>
+          <a class="button" href="downloads/v0.89.1/release-notes.txt">Release notes</a>
         </div>
-        <p class="note">Free and open source, MIT licence. Bring your own ROM.</p>
+        <p class="note">Free to download for macOS, Linux and Windows. Bring your own ROM.</p>
       </div>
       <figure class="shot">
         <img src="img/setup-window.png" alt="Chime68's setup window, drawn like a System 7 dialog: a Quadra 700 ROM, 20 MB of memory, a System 7.5.3 disk on SCSI ID 0, a shared host folder, speed and port settings, and Quit and Start buttons." width="1024" height="892">
@@ -272,7 +268,7 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Get Chime68</span>
-        <h2>Download it, or build it.</h2>
+        <h2>Download it and boot.</h2>
       </div>
       <div class="split">
         <div class="card">
@@ -291,12 +287,10 @@
           <!-- downloads:end -->
         </div>
         <div class="card">
-          <h3>Build from source</h3>
-          <p>With Rust installed:</p>
-<pre><code>git clone https://github.com/pepito2k/chime68
-cd chime68
-cargo build --release</code></pre>
-          <p>The binary is <code>target/release/chime68</code>. On Linux, install the ALSA headers first (<code>libasound2-dev</code> on Debian and Ubuntu). On a Mac, <code>scripts/bundle-macos.sh target/release/chime68</code> wraps it in Chime68.app.</p>
+          <h3>Check your download</h3>
+          <p>Each build is listed in the checksums file with its SHA-256. To check one, put it next to <code>SHA256SUMS</code> and run:</p>
+<pre><code>shasum -a 256 -c SHA256SUMS --ignore-missing</code></pre>
+          <p>On Linux, use <code>sha256sum</code> instead of <code>shasum -a 256</code>. On Windows, <code>certutil -hashfile</code> followed by the file name and <code>SHA256</code> prints the hash to compare.</p>
         </div>
       </div>
     </div>
@@ -403,11 +397,10 @@ python3 -m http.server -d target/web 8068</code></pre>
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>Chime68 is free software under the MIT licence. Macintosh, PowerBook, Quadra and Mac OS are trademarks of Apple Inc.; Chime68 is an independent project, not affiliated with or endorsed by Apple.</p>
+    <p>Macintosh, PowerBook, Quadra and Mac OS are trademarks of Apple Inc.; Chime68 is an independent project, not affiliated with or endorsed by Apple.</p>
     <nav aria-label="Links">
-      <a href="https://github.com/pepito2k/chime68">GitHub</a>
-      <a href="https://github.com/pepito2k/chime68/releases">Releases</a>
-      <a href="https://github.com/pepito2k/chime68/blob/main/CHANGELOG.md">Changelog</a>
+      <a href="#get">Download</a>
+      <a href="downloads/v0.89.1/release-notes.txt">Release notes</a>
     </nav>
   </div>
 </footer>
