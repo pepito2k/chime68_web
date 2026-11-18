@@ -86,6 +86,9 @@ awk -v block="$block" '
   !skip
 ' index.html > "$tmp/index.html"
 mv "$tmp/index.html" index.html
+# Other links to the notes (hero, footer) carry the version in their path.
+sed -E "s#downloads/v[0-9]+\.[0-9]+\.[0-9]+/#$dir/#g" index.html > "$tmp/index.html"
+mv "$tmp/index.html" index.html
 
 echo "Published $tag into $dir:"
 ls -l "$dir"
