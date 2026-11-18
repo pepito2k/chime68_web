@@ -1,0 +1,6 @@
+
+### Bug Fixes
+
+- **chime68:** the macOS release builds, Chime68.app and the command-line `chime68`, are signed with a Developer ID and the hardened runtime and notarized by Apple, so macOS 15 opens them without a trip to Privacy & Security; builds with Rust 1.100
+
+

@@ -1,0 +1,13 @@
+{
+  "version": "0.89.1",
+  "tag": "v0.89.1",
+  "files": {
+    "macos-app": "downloads/v0.89.1/Chime68-v0.89.1-macos.zip",
+    "macos-arm64": "downloads/v0.89.1/chime68-v0.89.1-macos-arm64.tar.gz",
+    "macos-x86_64": "downloads/v0.89.1/chime68-v0.89.1-macos-x86_64.tar.gz",
+    "linux-x86_64": "downloads/v0.89.1/chime68-v0.89.1-linux-x86_64.tar.gz",
+    "windows-x86_64": "downloads/v0.89.1/chime68-v0.89.1-windows-x86_64.zip"
+  },
+  "sha256sums": "downloads/v0.89.1/SHA256SUMS",
+  "release_notes": "downloads/v0.89.1/release-notes.txt"
+}
